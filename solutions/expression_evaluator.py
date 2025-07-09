@@ -30,9 +30,13 @@ def calculate(input_expression: str):
                 case expr if p_action is None and p_num is None and num is not None:
                     p_num = int(expr)
                 case expr if p_action in "*/" and p_num is not None:
-                    p_num, p_action = p_num / int(expr) if p_action == "/" else p_num * int(expr), None
+                    p_num, p_action = (
+                        p_num / int(expr) if p_action == "/" else p_num * int(expr)
+                    ), None
                 case expr if p_action in "*/" and p_num is None and num is not None:
-                    num, p_action = num / int(expr) if p_action == "/" else num * int(expr), None
+                    num, p_action = (
+                        num / int(expr) if p_action == "/" else num * int(expr)
+                    ), None
         elif expr == "":
             continue
         elif expr in "*/+-":
@@ -42,7 +46,11 @@ def calculate(input_expression: str):
                 case expr if expr in "+-" and action is None:
                     action = expr
                 case expr if expr in "+-":
-                    num, action, p_num = num - p_num if action == "-" else num + p_num, expr, None
+                    num, action, p_num = (
+                        num - p_num if action == "-" else num + p_num,
+                        expr,
+                        None,
+                    )
         else:
             raise ValueError(f"Invalid value/sign in expression: {expr}")
 
