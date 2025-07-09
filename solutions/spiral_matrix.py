@@ -39,7 +39,7 @@ class SpiralMatrix:
         :return: Returns the result of the method execution if the internal counter is less
                  than the size, otherwise returns None.
         """
-        if self.counter >= self.size:
+        if self.counter > self.size:
             return None
         return method(right, bottom)
 
