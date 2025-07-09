@@ -1,6 +1,6 @@
 import unittest
 
-from expression_evaluator import calculate
+from solutions.expression_evaluator import calculate
 
 
 class TestExpressionEvaluator(unittest.TestCase):

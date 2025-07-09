@@ -1,3 +1,11 @@
+# To get started with this project:
+
+1. Ensure you have Python 3.12 or higher installed
+2. Clone this repository
+3. Navigate to the `solutions` directory to find the implementation files
+
+Each solution file contains examples and can be run directly using Python.
+
 ## Expression Evaluator [expression_evaluator.py](solutions/expression_evaluator.py)
 Write a function that evaluates a simple math expression string containing only integers and +, -, *, /, and whitespace.
 Example:

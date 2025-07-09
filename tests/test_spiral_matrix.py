@@ -1,6 +1,6 @@
 import unittest
 
-from spiral_matrix import SpiralMatrix
+from solutions.spiral_matrix import SpiralMatrix
 
 
 class TestSpiralMatrix(unittest.TestCase):
