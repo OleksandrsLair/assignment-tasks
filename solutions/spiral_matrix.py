@@ -11,9 +11,10 @@ class SpiralMatrix:
     and fill it with integers in a spiral pattern. It supports matrix construction and
     spatially ordered value population based on user-defined specifications.
     """
+
     def __init__(self, n):
         self.n = n
-        self.size = n*n
+        self.size = n * n
         self.matrix = None
         self.left, self.right = 0, n - 1
         self.top, self.bottom = 0, n - 1
@@ -23,7 +24,7 @@ class SpiralMatrix:
         """
         Constructs a matrix by batching a range of numbers. The range spans from 0 to the `size` attribute
         of the instance. The numbers are grouped into sublists of size `n`, effectively forming a 2D matrix.
-        
+
         """
         return list(list(batch) for batch in batched(range(self.size), self.n))
 
@@ -66,7 +67,7 @@ class SpiralMatrix:
         if not right:
             direction = reversed(direction)
         direction = list(direction)
-        row_attr = 'top' if bottom else 'bottom'
+        row_attr = "top" if bottom else "bottom"
         row = getattr(self, row_attr)
 
         for i in direction:
@@ -97,7 +98,7 @@ class SpiralMatrix:
         if not bottom:
             direction = reversed(direction)
         direction = list(direction)
-        col_attr = 'left' if right else 'right'
+        col_attr = "left" if right else "right"
         col = getattr(self, col_attr)
 
         for i in direction:
@@ -112,7 +113,7 @@ class SpiralMatrix:
         """
         Creates a spiral matrix by filling rows with appropriate values.
 
-        Generates a two-dimensional matrix and populates it in a spiral 
+        Generates a two-dimensional matrix and populates it in a spiral
         pattern by filling the rows in the correct order.
 
         :return: A two-dimensional list representing the spiral matrix.
@@ -132,7 +133,7 @@ examples = [
 ]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     for example in examples:
-        print(f'{example}: \n')
+        print(f"{example}: \n")
         pprint(SpiralMatrix(example).make_spiral())
